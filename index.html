@@ -1,0 +1,67 @@
+<html>
+<head>
+<meta charset="UTF-8">
+<title>趣游故宫网</title>
+<style type="text/css">
+	body{background:;}
+	.banner img{display:block;width:100%;height:20%;object-fit:cover;}
+	.title{margin:20px;text-align:center;}
+	.title h1{font-size:30px}
+	.text{width:1000px;margin:auto;background:#6f767e;padding:15px;border-radius:3px;}
+	.text p{font-size:15px;line-height:1.4;}
+</style>
+</head>
+
+<body>
+<center>
+<marquee bgcolor="#1d2f43"><font face="微软雅黑" color="white">欢迎来到趣游故宫网</font></marquee>
+<div class="banner">
+<img src="img/top.jpg">
+</div>
+<div class="title">
+首页
+导览
+展览
+教育
+探索
+<a href="https://www.dpm.org.cn/Research.html">学术</a>
+文创
+关于
+<br>
+</div>
+<div class="text">
+<p>故宫博物院教育中心位于故宫熙和门南北两侧，面积约800平方米。经过一年多的项目规划、工程改造和室内设计，目前教育中心改造工程已经完成，现包括综合性教学空间4个、开放型阅览空间2个，可同时容纳200余人，此外还配套有故宫志愿者工作站和志愿者阅览室，这将有利于志愿服务和教育服务的结合开展。
+故宫教育中心面向全社会正式开放。它将成为故宫博物院的教育平台和互动窗口，充分发挥各方面优势，举办针对各年龄段公众的文化课程和教育活动，举行讲座，举办培训，利用丰富的教育资源，让故宫教育惠及更多社会人群。</p>
+</div>
+<h1>我要留言</h1>
+<form action="result.html" method="get",name="invest" enctype="text/plain">
+姓名:
+<br>
+<input type="text" id="name" name="name" size="30">
+<br><br>
+留言：
+<br>
+<input type="text" id="content" name="content" maxlength size="30">
+<br><br>
+<input type="submit" name="submit" value="提交">
+</form>
+
+<script>
+//获取表单元素和输入框元素
+const form = document.querySelector('form')
+const input = document.querySelector('#name')
+const shuru = document.querySelector('#content')
+
+//在表单提交时将数据拼接到URL中
+form.addEventListener('submit',(event)=>{
+event.preventDefault();
+const url = new URL(form.action);
+url.searchParams.set('name',input.value);
+url.searchParams.set('content',shuru.value);
+window.location.href = url.toString();
+})
+</script>
+
+</center>
+</body>
+</html>
